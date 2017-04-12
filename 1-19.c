@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 
 	len = 0;
 	while ((len = get_line(line, MAXLINE)) > 0) {
-		reverse(line, len);
+		reverse(line, len - 1);
 		printf("%s", line);
 	}
 }
