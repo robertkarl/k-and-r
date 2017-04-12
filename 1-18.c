@@ -1,15 +1,5 @@
 #include <stdio.h>
 #define MAXLINE 1000
-#define PRINTSIZE 80
-
-void copy(char to[], char from[])
-{
-	int i;
-
-	i = 0;
-	while ((to[i] = from[i]) != '\0')
-		++i;
-}
 
 int is_blank(char line[])
 {
@@ -48,12 +38,12 @@ void strip_line(char s[], int len)
 	}
 }
 
-main()
+int main(int argc, char **argv)
 {
-	int i, len, curr, end;
-	char line[MAXLINE], start[MAXLINE];
+	int len;
+	char line[MAXLINE];
 
-	curr = len = 0;
+	len = 0;
 	while ((len = get_line(line, MAXLINE)) > 0) {
 		if (!is_blank(line)) {
 			strip_line(line, len);
