@@ -34,8 +34,12 @@ main()
 
 	}
 	for (i = 0; i < maxheight; i++) {
-		for (j = 0; j < hist[i]; j++)
-			printf("X");
+		for (j = 0; j < MAX_LEN; j++) {
+			/* we are at bucket j, if bucket j had at least
+			maxheight - i words, print an X */
+			if (hist[j] >= (maxheight - i))
+				printf("X");
+		}
 		putchar('\n');
 	}
 }
