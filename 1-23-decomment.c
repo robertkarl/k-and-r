@@ -11,6 +11,8 @@ Notes:
 
 */
 /* comments can also appear like *//* this. */
+/* be sure not to choke on empty comments also */
+/**/
 #include <stdio.h>
 
 #define MAXLINE 1000

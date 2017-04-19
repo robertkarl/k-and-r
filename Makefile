@@ -23,7 +23,9 @@ testfold: fold
 	diff test.fold.3.out test.fold.3.out.expected
 	./fold < test.fold.4.in > test.fold.4.out
 	diff test.fold.4.out test.fold.4.out.expected
+	touch testfold
 
 clean:
 	rm -f entab detab fold decomment
+	rm -f testfold
 
