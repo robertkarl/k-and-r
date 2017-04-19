@@ -22,5 +22,5 @@ testfold: fold
 	diff test.fold.4.out test.fold.4.out.expected
 
 clean:
-	rm -f entab detab
+	rm -f entab detab fold
 
