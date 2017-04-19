@@ -53,12 +53,12 @@ void splitline(char line[], int len)
 		}
 		else {
 			i = findsplit(line, start + FOLDN, FOLDN);
-			strncpy(toprint, line + start, i);
-			toprint[i] = '\n';
-			toprint[i + 1] = '\0';
+			strncpy(toprint, line + start, i - start);
+			toprint[i - start] = '\n';
+			toprint[i - start + 1] = '\0';
 			printf("%s", toprint);
-			start = start + i;
-			if (line[i] == ' ')
+			start = i;
+			if (line[start] == ' ')
 				++start;
 		}
 	}

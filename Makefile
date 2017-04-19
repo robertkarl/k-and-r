@@ -18,6 +18,8 @@ testfold: fold
 	diff test.fold.2.out test.fold.2.out.expected
 	./fold < test.fold.3.in > test.fold.3.out
 	diff test.fold.3.out test.fold.3.out.expected
+	./fold < test.fold.4.in > test.fold.4.out
+	diff test.fold.4.out test.fold.4.out.expected
 
 clean:
 	rm -f entab detab
