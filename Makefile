@@ -1,6 +1,6 @@
-CFLAGS = -I. -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
+CFLAGS = -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: detab entab fold decomment
+all: detab entab fold decomment checksyntax
 
 detab: 1-20-detab.c
 	cc $(CFLAGS) 1-20-detab.c get_line.c -o detab
@@ -14,6 +14,9 @@ fold: 1-22-fold.c get_line.c
 decomment: 1-23-decomment.c get_line.c
 	cc $(CFLAGS) get_line.c 1-23-decomment.c -o decomment
 
+checksyntax: 1-24-checksyntax.c get_line.c
+	cc $(CFLAGS) 1-24-checksyntax.c get_line.c -o checksyntax
+
 testfold: fold
 	./fold < test.fold.1.in > test.fold.1.out
 	diff test.fold.1.out test.fold.1.out.expected
@@ -26,6 +29,6 @@ testfold: fold
 	touch testfold
 
 clean:
-	rm -f entab detab fold decomment
+	rm -f entab detab fold decomment checksyntax
 	rm -f testfold
 
