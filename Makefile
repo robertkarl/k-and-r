@@ -1,4 +1,4 @@
-CFLAGS = -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
+CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
 all: detab entab fold decomment checksyntax
 
@@ -27,6 +27,12 @@ testfold: fold
 	./fold < test.fold.4.in > test.fold.4.out
 	diff test.fold.4.out test.fold.4.out.expected
 	touch testfold
+
+testchecksyntax: checksyntax
+	./checksyntax < 1-24-checksyntax.c
+	./checksyntax < test.syntax.1.in
+	! ./checksyntax < test.syntax.2.in
+	! ./checksyntax < test.syntax.2.in
 
 clean:
 	rm -f entab detab fold decomment checksyntax

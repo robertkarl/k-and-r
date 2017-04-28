@@ -1,0 +1,3 @@
+char x[] = "multi
+            line
+            string";

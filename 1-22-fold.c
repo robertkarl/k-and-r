@@ -67,7 +67,7 @@ void splitline(char line[], int len)
 main()
 {
 	char line[MAXLINE];
-	int len, i;
+	int len;
 
 	while ((len = get_line(line, MAXLINE)) > 0) {
 		splitline(line, len);
