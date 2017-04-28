@@ -1,6 +1,6 @@
 CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: detab entab fold decomment checksyntax
+all: detab entab fold decomment checksyntax 
 
 detab: 1-20-detab.c
 	cc $(CFLAGS) 1-20-detab.c get_line.c -o detab
@@ -16,6 +16,9 @@ decomment: 1-23-decomment.c get_line.c
 
 checksyntax: 1-24-checksyntax.c get_line.c
 	cc $(CFLAGS) 1-24-checksyntax.c get_line.c -o checksyntax
+
+limits: 2-01-limits.c
+	cc $(CFLAGS) 2-01-limits.c -o limits
 
 testfold: fold
 	./fold < test.fold.1.in > test.fold.1.out
