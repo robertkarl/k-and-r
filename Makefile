@@ -20,6 +20,9 @@ checksyntax: 1-24-checksyntax.c get_line.c
 limits: 2-01-limits.c
 	cc $(CFLAGS) 2-01-limits.c -o limits
 
+2-02: 2-02.c
+	cc $(CFLAGS) 2-02.c -o 2-02
+
 testfold: fold
 	./fold < test.fold.1.in > test.fold.1.out
 	diff test.fold.1.out test.fold.1.out.expected
@@ -38,6 +41,6 @@ testchecksyntax: checksyntax
 	! ./checksyntax < test.syntax.2.in
 
 clean:
-	rm -f entab detab fold decomment checksyntax
+	rm -f entab detab fold decomment checksyntax limits 2-02
 	rm -f testfold
 
