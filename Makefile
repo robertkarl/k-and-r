@@ -23,6 +23,9 @@ limits: 2-01-limits.c
 2-02: 2-02.c
 	cc $(CFLAGS) 2-02.c -o 2-02
 
+2-03: 2-03.c
+	cc $(CFLAGS) 2-03.c -o 2-03
+
 testfold: fold
 	./fold < test.fold.1.in > test.fold.1.out
 	diff test.fold.1.out test.fold.1.out.expected
