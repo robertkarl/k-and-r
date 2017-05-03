@@ -26,6 +26,9 @@ limits: 2-01-limits.c
 2-03: 2-03.c
 	cc $(CFLAGS) 2-03.c -o 2-03
 
+2-04-squeeze: 2-04-squeeze.c
+	cc $(CFLAGS) 2-04-squeeze.c -o 2-04-squeeze
+
 testfold: fold
 	./fold < test.fold.1.in > test.fold.1.out
 	diff test.fold.1.out test.fold.1.out.expected
@@ -44,6 +47,6 @@ testchecksyntax: checksyntax
 	! ./checksyntax < test.syntax.2.in
 
 clean:
-	rm -f entab detab fold decomment checksyntax limits 2-02
+	rm -f entab detab fold decomment checksyntax limits 2-02 2-03 2-04-squeeze
 	rm -f testfold
 
