@@ -116,6 +116,7 @@ main()
 	char line[MAXLINE];
 
 	int bracedepth = 0;
+	int bracketdepth = 0;
 	int parens_depth = 0;
 	int istart;
 
@@ -138,10 +139,10 @@ main()
 			/* ^^ do the above until i stops changing */
 			if (istart == i) {
 				if (!in_comment) {
-					if (line[i] == '{')
-						++bracedepth;
-					else if (line[i] == '}')
-						--bracedepth;
+					if (line[i] == '{') ++bracedepth;
+					else if (line[i] == '}') --bracedepth;
+					else if (line[i] == '[') ++bracketdepth;
+					else if (line[i] == ']') --bracketdepth;
 					++i;
 				}
 			}
@@ -150,6 +151,10 @@ main()
 	}
 	if (bracedepth) {
 		printf("unbalanced braces\n");
+		return -1;
+	}
+	if (bracketdepth) {
+		printf("unbalanced square brackets\n");
 		return -1;
 	}
 	if (parens_depth) {

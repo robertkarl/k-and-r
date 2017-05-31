@@ -1,3 +1,4 @@
 - [ ] Update 2-01 with computations for limits
 - [ ] Add earlier items to Makefile
 - [ ] 2-04 doesn't quite use the "style" of the section; increment and decrement operators
+- [ ] Cleanup directory and add a little structure
