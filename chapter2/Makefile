@@ -1,6 +1,6 @@
 CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: limits 2-02 2-03 2-04-squeeze any
+all: limits 2-02 2-03 2-04-squeeze any setbits
 
 limits: 2-01-limits.c
 	cc $(CFLAGS) 2-01-limits.c -o limits
@@ -17,8 +17,12 @@ limits: 2-01-limits.c
 any: 2-05.c
 	cc $(CFLAGS) 2-05.c -o any
 
+setbits: 2-06.c
+	cc $(CFLAGS) 2-06.c -o setbits
+
 clean:
-	rm -f limits 2-02 2-03 2-04-squeeze any
+	rm -f limits 2-02 2-03 2-04-squeeze any setbits
 
 .PHONY:
 	clean
+
