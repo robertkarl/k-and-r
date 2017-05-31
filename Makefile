@@ -1,6 +1,6 @@
 CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: detab entab fold decomment checksyntax 5-18-decl
+all: detab entab fold decomment checksyntax 5-18-decl chapter1 chapter2
 
 detab: 1-20-detab.c
 	cc $(CFLAGS) 1-20-detab.c get_line.c -o detab
@@ -17,17 +17,11 @@ decomment: 1-23-decomment.c get_line.c
 checksyntax: 1-24-checksyntax.c get_line.c
 	cc $(CFLAGS) 1-24-checksyntax.c get_line.c -o checksyntax
 
-limits: 2-01-limits.c
-	cc $(CFLAGS) 2-01-limits.c -o limits
+chapter1:
+	cd chapter1 && $(MAKE)
 
-2-02: 2-02.c
-	cc $(CFLAGS) 2-02.c -o 2-02
-
-2-03: 2-03.c
-	cc $(CFLAGS) 2-03.c -o 2-03
-
-2-04-squeeze: 2-04-squeeze.c
-	cc $(CFLAGS) 2-04-squeeze.c -o 2-04-squeeze
+chapter2:
+	cd chapter2 && $(MAKE)
 
 5-18-decl: 5-18-decl.c
 	cc $(CFLAGS) 5-18-decl.c -o 5-18-decl
@@ -50,7 +44,10 @@ testchecksyntax: checksyntax
 	! ./checksyntax < test.syntax.2.in
 
 clean:
-	rm -f entab detab fold decomment checksyntax limits 2-02 2-03 2-04-squeeze
+	rm -f entab detab fold decomment checksyntax
 	rm -f 5-18-decl
 	rm -f testfold
+	cd chapter1 && $(MAKE) clean
+	cd chapter2 && $(MAKE) clean
 
+.PHONY: chapter1 chapter2 clean testchecksyntax

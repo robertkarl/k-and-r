@@ -3,7 +3,7 @@
 
 main()
 {
-	short s;
+	/*short s;
 	unsigned short us;
 	int i;
 	unsigned int ui;
@@ -11,6 +11,7 @@ main()
 	unsigned long ul;
 	char c;
 	unsigned char uc;
+	*/
 	
 	printf("char: %d  %d\n", SCHAR_MIN, SCHAR_MAX);
 	printf("char: %d  %d\n", 0, UCHAR_MAX);
