@@ -8,7 +8,7 @@ My goals with this project:
 - Be pedantic; turn on essentially all warnings `-Wunused-variable -Wno-implicit-int -Wno-return-type -pedantic -ansi -Werror`
 - Use good K&R style (for a given problem, use only techniques that have already been covered)
 
-```
+```sh
 git clone https://github.com/robertkarl/k-and-r-exercises.git
 cd k-and-r-exercises
 make # recursively makes all exercises. optionally use pmake (POSIX make)
