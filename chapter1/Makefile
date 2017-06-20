@@ -1,6 +1,6 @@
 CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: 1-01
+all: 1-01 checksyntax detab
 
 test: testchecksyntax
 
@@ -20,7 +20,7 @@ testchecksyntax: checksyntax
 	! ./checksyntax < tests/test.syntax.2.in
 
 clean:
-	rm -f 1-01 detab
+	rm -f 1-01 detab checksyntax
 
 .PHONY: test testchecksyntax clean
 
