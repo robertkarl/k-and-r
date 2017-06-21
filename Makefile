@@ -1,6 +1,6 @@
 CFLAGS = -Wunused-variable -Wno-implicit-int -Wno-return-type -g -pedantic -ansi -Werror
 
-all: entab fold decomment 5-18-decl chapter1 chapter2
+all: entab fold decomment 5-18-decl chapter1 chapter2 chapter3 chapter4
 
 entab: 1-21-entab.c get_line.c
 	cc $(CFLAGS) 1-21-entab.c get_line.c -o entab
@@ -19,6 +19,9 @@ chapter2:
 
 chapter3:
 	cd chapter3 && $(MAKE)
+
+chapter4:
+	cd chapter4 && $(MAKE)
 
 5-18-decl: 5-18-decl.c
 	cc $(CFLAGS) 5-18-decl.c -o 5-18-decl
@@ -41,5 +44,6 @@ clean:
 	cd chapter1 && $(MAKE) clean
 	cd chapter2 && $(MAKE) clean
 	cd chapter3 && $(MAKE) clean
+	cd chapter4 && $(MAKE) clean
 
-.PHONY: chapter1 chapter2 clean
+.PHONY: chapter1 chapter2 chapter3 chapter4 clean
