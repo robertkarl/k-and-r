@@ -31,7 +31,7 @@ void expand(char s[], char t[])
 main()
 {
 	char t[100];
-	expand("a-b-c", t);
+	expand("a-b-z-", t);
 	printf("%s\n", t);
-
 }
+
