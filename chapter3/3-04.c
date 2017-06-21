@@ -14,6 +14,8 @@
 
 #define WORDSIZE 32
 
+void reverse(char s[]);
+
 void itoa(int n, char s[])
 {
 	int i, signbitset;

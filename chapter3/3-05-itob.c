@@ -9,6 +9,8 @@ void itob(int n, char s[], unsigned b);
 
 #define WORDSIZE 32
 
+void reverse(char s[]);
+
 char convertword(unsigned n, unsigned b)
 {
 	n = n % b;
