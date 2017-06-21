@@ -14,20 +14,6 @@
 
 #define WORDSIZE 32
 
-void reverse(char s[])
-{
-	char *t = s;
-	char tmp;
-	while (*t)
-		++t;
-	--t;
-	while (s < t) {
-		tmp = *s;
-		*s++ = *t;
-		*t-- = tmp;	
-	}
-}
-
 void itoa(int n, char s[])
 {
 	int i, signbitset;
