@@ -6,8 +6,8 @@ int get_line(char s[], int lim)
 	/* do loop with equality instead of && and || ? */
 	i = 0;
 	for (i = 0;
-		!(i < lim - 1) ==
-		((c = getchar()) == EOF) == (c == '\n') == 0; ++i) {
+		c = getchar(), !(i < lim - 1) ==
+		(c == EOF) == (c == '\n') == 0; ++i) {
 		s[i] = c;
 	}
 	if (c == '\n') {
